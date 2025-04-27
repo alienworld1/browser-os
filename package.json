@@ -23,6 +23,7 @@
     "@types/react-dom": "^19",
     "@types/react-resizable": "^3.0.8",
     "@types/uuid": "^10.0.0",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

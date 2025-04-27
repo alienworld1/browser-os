@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { WindowManagerProvider } from "@/context/WindowManagerContext"; // Import the provider
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { WindowManagerProvider } from '@/context/WindowManagerContext';
+import { FileSystemProvider } from '@/context/FileSystemContext'; // Import FileSystemProvider
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Browser OS",
-  description: "A mock OS running in your browser",
+  title: 'Browser OS',
+  description: 'A mock OS running in your browser',
 };
 
 export default function RootLayout({
@@ -17,11 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-hidden`}> {/* Prevent body scroll */}
-        {/* Wrap the entire application with the Window Manager */}
-        <WindowManagerProvider>
-          {children}
-        </WindowManagerProvider>
+      <body className={`${inter.className} overflow-hidden`}>
+        {/* FileSystemProvider wraps WindowManagerProvider */}
+        <FileSystemProvider>
+          <WindowManagerProvider>{children}</WindowManagerProvider>
+        </FileSystemProvider>
       </body>
     </html>
   );

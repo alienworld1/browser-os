@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Desktop from "@/components/os/Desktop";
-import Taskbar from "@/components/os/Taskbar";
+import Desktop from '@/components/os/Desktop';
+import Taskbar from '@/components/os/Taskbar';
 
 export default function Home() {
   return (

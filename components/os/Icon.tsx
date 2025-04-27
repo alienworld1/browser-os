@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import Image from 'next/image';
 
@@ -15,7 +15,13 @@ const Icon: React.FC<IconProps> = ({ icon, label, onDoubleClick }) => {
       onDoubleClick={onDoubleClick}
       aria-label={`Open ${label}`}
     >
-      <Image src={icon} alt={`${label} icon`} width={32} height={32} className="mb-1" />
+      <Image
+        src={icon}
+        alt={`${label} icon`}
+        width={32}
+        height={32}
+        className="mb-1"
+      />
       <span className="break-words line-clamp-2">{label}</span>
     </button>
   );
